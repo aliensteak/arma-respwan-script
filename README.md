@@ -2,7 +2,7 @@
 
 ## How to use in a mission
 1. Create a new mpmission in-game.
-2. Go to `Documents\Arma 3\{username}\mpmissions\{mission_name}\` and save all the files in the folder.
+2. Go to `Documents\Arma 3\{username}\mpmissions\{mission_name}\` and save all the files from this repo in the folder.
 3. In the editor, select the Zeus unit (NOT the module, the unit) and give it a variable name of `God`.
 
 ## How it works
