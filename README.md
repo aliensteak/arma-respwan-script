@@ -4,6 +4,7 @@
 1. Create a new mpmission in-game.
 2. Go to `Documents\Arma 3\{username}\mpmissions\{mission_name}\` and save all the files from this repo in the folder.
 3. In the editor, select the Zeus unit (NOT the module, the unit) and give it a variable name of `God`.
+4. Create empty game logic (Systems(F5) > Logic Entries > Objects > Game Logic (Vanilla)), for respawn points following the name format fw_{side}_respawn. Example: fw_west_respawn, fw_east_respawn, fw_guer_respawn, and fw_civilian_respawn for BLUFOR, OPFOR, GREENFOR, and CIVILIAN respectively.
 
 ## How It Works
 1. **Entry point** - `init.sqf` - adds diary entry for admin and zeus to call in respawn and allows admin to call respawn wave via respawn command (`respawnWave`). Also adds 2 event listeners when player is killed to put them in spectator mode and run respawn logic when respawn wave is called.
