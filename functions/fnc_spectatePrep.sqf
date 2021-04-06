@@ -36,7 +36,6 @@ if (FW_RespawnTickets > 0) then {
     };
 
     FW_RespawnTickets = FW_RespawnTickets - 1;
-
 } else {
     player setCaptive true;
     player allowdamage false;

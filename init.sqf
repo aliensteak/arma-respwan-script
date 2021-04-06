@@ -25,21 +25,19 @@ if (hasInterface) then { //This scope is for the players
         // this adds a briefing menu that gives you a button that can be clicked to call a respawn wave.
         player createDiaryRecord ["Diary", ["Respawn", "
             <br/><font color='#70db70' size='14'>Respawn Wave:</font>
-            <br/>This is used to call a respawn wave on demand, it will give the players in spectator a single respawn with a 10 second timer.
+            <br/>This is used to call a respawn wave on demand, it will give the players in spectator a single respawn with a 5 second timer.
             <br/>
             <br/>If the admin is dead and in spectator they can also trigger a respawn by typing the admin only chat command <font color='#FF8C00'>#respawnWave</font> in spectator chat.
             <br/>
-            <br/>This must NOT be used in missions that already have vanilla respawning enabled.
-            <br/>
             <execute expression=' \
-                if (!alive player) then { \
-                    FW_RespawnTickets = 1; \
-                }; \
+                FW_RespawnTickets = 1; \
+                systemChat ""Respwan Wave Called"";
                 publicVariable ""FW_RespawnTickets""; \
-                {setPlayerRespawnTime random 10;} remoteExec [""call""]; \
+                {setPlayerRespawnTime 5;} remoteExec [""call""]; \
                 [ \
                     { \
                         FW_RespawnTickets = 0; \
+                        systemChat ""Respwan Wave Ended"";\
                         publicVariable ""FW_RespawnTickets""; \
                         10e10 remoteExec [""setPlayerRespawnTime""]; \
                     }, \
@@ -52,9 +50,8 @@ if (hasInterface) then { //This scope is for the players
 
     //Chat commands to allow the admin to call a respawn even when dead/spectating.
     ["respawnWave", {
-        if (!alive player) then {
-            FW_RespawnTickets = 1;
-        };
+        FW_RespawnTickets = 1;
+        systemChat "Respwan Wave Called";
         publicVariable "FW_RespawnTickets";
         {
             setPlayerRespawnTime 5;
@@ -62,6 +59,7 @@ if (hasInterface) then { //This scope is for the players
         [
             {
                 FW_RespawnTickets = 0;
+                systemChat "Respwan Wave Ended";
                 publicVariable "FW_RespawnTickets";
                 10e10 remoteExec ["setPlayerRespawnTime"];
             },
