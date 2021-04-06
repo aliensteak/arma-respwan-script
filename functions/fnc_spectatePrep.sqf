@@ -22,16 +22,7 @@ ace_nametags_showPlayerNames = 0;
 }, [], 5] call CBA_fnc_waitAndExecute;
 
 if (FW_RespawnTickets > 0) then {
-
-    // retrieve player faction from player variable if not null, or get latest
-    private _playerFaction = objNull;
-    if (!isNil {player getVariable "PlayerFaction"}) then {
-        _playerFaction = player getVariable "PlayerFaction";
-    } else {
-        _playerFaction = playerSide;
-    };
-
-    private _respawnName = toLower(format ["fw_%1_respawn", _playerFaction]);
+    private _respawnName = "fw_respawn";
     private _respawnPoint = missionNamespace getVariable [_respawnName, objNull];
 
     // retrieve PlayerLoadout and set player loadout back to initial state
