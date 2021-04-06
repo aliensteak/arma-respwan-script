@@ -35,6 +35,10 @@ if (FW_RespawnTickets > 0) then {
         player setPosATL ([[[_respawnPosition, 10]]] call BIS_fnc_randomPos); //yes this needs all three square brackets on each side.
     };
 
+    // force player to put weapons on back
+    // stopgap solution to people not able to hear gunshots after respawn unless they switch weapons
+    player action ["SwitchWeapon", player, player, 100];
+
     FW_RespawnTickets = FW_RespawnTickets - 1;
 } else {
     player setCaptive true;
