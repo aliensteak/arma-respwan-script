@@ -12,6 +12,6 @@
 
 3. **Remove all gear** - `fnc_remoteAllGear.sqf` - removes all the gear a player has.
 
-4. **Force player into spectator screen - `fnc_spectateCheck.sqf`
+4. **Force player into spectator screen** - `fnc_spectateCheck.sqf`
 
 5. **Run respawn logic** - `fnc_spectatePrep.sqf` - retrieves respawn point based on player side and respawns player with the kit saved from when the player joined at the respawn point.
