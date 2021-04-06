@@ -1,0 +1,7 @@
+
+    respawn = "BASE"; //Do not change
+    respawndelay = 10e10; //How long it takes a player to respawn in seconds - 10e10 is 10 billion seconds, don't change this unless you know what you're doing.
+    disabledAI = 1; //disabledAI so unslotted playable units do not spawn as ai
+    respawnButton = 0; //Disables the respawn button
+    respawnDialog = 0; //Disables the score screen while respawning
+    respawnTemplates[] = {"ace_spectator","Base","Counter"}; // "ace_spectator","Base","Counter","Tickets","Wave"

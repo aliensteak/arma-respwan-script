@@ -1,0 +1,1 @@
+player setVariable ['PlayerLoadout', (getUnitLoadout player)];
