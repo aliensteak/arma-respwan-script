@@ -31,13 +31,13 @@ if (hasInterface) then { //This scope is for the players
             <br/>
             <execute expression=' \
                 FW_RespawnTickets = 1; \
-                systemChat ""Respwan Wave Called"";
+                [playerSide, ""HQ""] sideChat ""Respwan Wave Started""; \
                 publicVariable ""FW_RespawnTickets""; \
                 {setPlayerRespawnTime 5;} remoteExec [""call""]; \
                 [ \
                     { \
                         FW_RespawnTickets = 0; \
-                        systemChat ""Respwan Wave Ended"";\
+                        [playerSide, ""HQ""] sideChat ""Respwan Wave Ended"";\
                         publicVariable ""FW_RespawnTickets""; \
                         10e10 remoteExec [""setPlayerRespawnTime""]; \
                     }, \
@@ -51,7 +51,7 @@ if (hasInterface) then { //This scope is for the players
     //Chat commands to allow the admin to call a respawn even when dead/spectating.
     ["respawnWave", {
         FW_RespawnTickets = 1;
-        systemChat "Respwan Wave Called";
+        [playerSide, "HQ"] sideChat "Respwan Wave Started";
         publicVariable "FW_RespawnTickets";
         {
             setPlayerRespawnTime 5;
@@ -59,7 +59,7 @@ if (hasInterface) then { //This scope is for the players
         [
             {
                 FW_RespawnTickets = 0;
-                systemChat "Respwan Wave Ended";
+                [playerSide, "HQ"] sideChat "Respwan Wave Ended";
                 publicVariable "FW_RespawnTickets";
                 10e10 remoteExec ["setPlayerRespawnTime"];
             },
