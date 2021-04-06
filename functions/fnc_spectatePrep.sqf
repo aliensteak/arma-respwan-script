@@ -37,7 +37,7 @@ if (FW_RespawnTickets > 0) then {
 
     // force player to put weapons on back
     // stopgap solution to people not able to hear gunshots after respawn unless they switch weapons
-    player action ["SwitchWeapon", player, player, 100];
+    player action ["SwitchWeapon", player, player, 999];
 
     FW_RespawnTickets = FW_RespawnTickets - 1;
 } else {
