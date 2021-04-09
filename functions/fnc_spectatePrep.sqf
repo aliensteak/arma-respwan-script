@@ -35,6 +35,8 @@ if (FW_RespawnTickets > 0) then {
         player setPosATL ([[[_respawnPosition, 10]]] call BIS_fnc_randomPos); //yes this needs all three square brackets on each side.
     };
 
+    player sideChat "Press 0 twice to fix audio bug. Sorry for the inconvenience :(";
+
     FW_RespawnTickets = FW_RespawnTickets - 1;
 } else {
     player setCaptive true;
