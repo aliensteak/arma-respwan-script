@@ -33,6 +33,8 @@ if (FW_RespawnTickets > 0) then {
     if (!isNull(_respawnPoint)) then {
         _respawnPosition = getPosATL _respawnPoint;
         player setPosATL ([[[_respawnPosition, 10]]] call BIS_fnc_randomPos); //yes this needs all three square brackets on each side.
+    } else {
+        [playerSide, "HQ"] sideChat "Something went wrong with the script. RIP"
     };
 
     player sideChat "Press 0 twice to fix audio bug. Sorry for the inconvenience :(";
