@@ -1,0 +1,7 @@
+class Respawn {
+	file = "respawn\functions";
+	class playerLoadInit {};
+	class respawnWaveEntries {};
+	class makeSpectator {};
+	class respawnPlayers {};
+}
