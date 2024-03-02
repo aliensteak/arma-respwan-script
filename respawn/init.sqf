@@ -20,7 +20,7 @@ if !(hasInterface) exitWith { /* condition exits if client is not a player (like
 waitUntil {!(isNull player)};
 
 // initialize the player
-call TOB_fnc_playerLoadInit;
+// call TOB_fnc_playerLoadInit;
 
 _adminState = call BIS_fnc_admin != 0;
 _isGodOrInGodGroup = !isNil "God" && { God isEqualTo player || { group player isEqualTo group God } };
