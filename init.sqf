@@ -11,6 +11,9 @@ PREP(removeAllGear);
 PREP(spectateCheck);
 PREP(spectatePrep);
 
+// this line of code is to disable debug messages from spotlight mod
+missionNamespace setVariable ["FL_Spotlight_isDebug",false,true];
+
 if (hasInterface) then { //This scope is for the players
 
     //Anything done using "player" must be past this line for JIP compatibility
